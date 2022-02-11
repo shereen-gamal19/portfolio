@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ 
+ /*  * stands for style for the page in all*/
+ *{
+   
+    font-family: 'Poppins', sans-serif;
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/*we will select the element directly if we didn't identify a class or id to it*/
+     /* we will make the position is fixed so that if we make a scroll then the header will be still exists and any thing won't come over it() by using z-index*/
+
+header {
+    background-color: #f1ebeb;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 200px ;
+}
+.logo{
+    text-decoration: none;
+    color: #3a6cf4;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.8em;
+}
+
+.navigation a{
+    color: #3a6cf4;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding-left: 30px;
+}
+
+.navigation a:hover{
+    color: darkviolet;
+}
+section {
+    padding: 100px 200px;
+}
+.main {
+    width: 100%;
+    /* here we set the minimum height of the child which is main is 100 so that if it grow more then the body will grow more 
+    and also we set it as vh refer to view port so that this class will appear in all page except the header*/
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /* we use it after we madke the display to be fixed*/
+    background: url(images/back.jpg) no-repeat;
+    background-size: cover;
+    background-position:center;
+    background-attachment: fixed;/*this is effect doesn't apply to the iphone system so try to avoid it*/
+
+
+}
+.main h2 {
+    color: rgb(167, 29, 125);
+    font-size: 1.4em;
+    font-weight: 500;
+    
+}
+.main h2 span{
+    /* span is inline element so that we cann't apply
+     margin top or margin bottom or height so to this we will make the display is inline-block to this*/
+    display: inline-block;
+    margin-top: 10px;
+    color: indigo;
+    font-size: 3em;
+    font-weight: 600;
+}
+.main h3 {/*h3 block element*/
+    color: lawngreen;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 1px; /*it leaves space between the letters*/
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.main-btn{/* anchore or a is inline element */
+    color:lightyellow;
+    background-color: lightseagreen;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600 ;
+    display: inline-block;
+    padding: 0.9375em 2.1875em;/*the value of the padding is transformed from px to em by multiplying by 16 because this value will make the button become responsive on mobiles , ipads and all screens with different size */
+    letter-spacing: 1px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    transition: 0.7s ease; /* here we did this so that when we hover over the btn then it will grow in 0.7second 
+     specifies a transition effect with a slow start, then fast, then end slowly (this is default)*/
+}
+.main-btn:hover{
+    background-color: chartreuse;
+    transform: scale(1.1); /* here we will make the btn greater when we hover over it so we used the scale property and 1.1 refer to x,y directions */ 
+}
+/*css for social icons */
+.social-icons{
+    color: rgb(4, 23, 59);
+    font-size: 1.7em;
+    padding-right: 30px;
+}
+.title{
+    display: flex; /*because <h2> is block element and we want to put it in the center so we used display flex*/
+    justify-content: center;
+    color: darkblue;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;   
+}
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row; /* here the elements will be جمب بعض*/
+    flex-wrap: wrap;/* لو صفرنا الشاشه الكوت هتنزل لتحت عشان تظهر كلها في الشاشه */
+    
+}
+.card {
+    background-color: rgb(248, 248, 248);
+    width:21.25em ;
+    /* here we will make a shadow around the card*/
+    box-shadow: 0 5px 25px rgba(1 1 1 / 15%); /* here we put 0 because we don't want a shadow above or under the card
+     and also 5 px refer to that the shadow will be at the right and if we want it at the left then it will be -5px 
+25 refer to the amount of shadow around the card and rgba is for the color of the shadow */
+    border-radius: 10px;
+    padding:25px;/* space inside the card*/
+    margin: 15px; /* for the space between the cards*/
+}
+.card:hover {
+    transform: scale(1.1);
+    transition: 0.7s ease;
+}
+.icone {
+    color:royalblue;
+    font-size: 8em;
+    text-align: center;
+
+}
+.info{
+    text-align: center;
+}
+.info h3 {
+    color: royalblue;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 10 px;
+
+}
+.projects {
+    background-color: salmon;
+}
+.projects .content{
+    margin-top: 30px;
+
+
+}
+.project-card{
+    background-color: seashell;
+    border: 1px solid #e3e8f3;
+    min-height: 14em;
+    width: 23em;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px;
+    transition: 0.7s ease;
+}
+.project-card:hover{
+    transform: scale(1.1);
+}
+.project-card:hover .project-image{
+    opacity: 0.9;
+}
+.project-image img{
+    width: 100%;
+
+}
+.project-info{
+    padding: 1em;
+
+}
+.project-category{
+    font-size: 0.8em;
+    color: #000;
+
+}
+.project-title{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 10px;
+}
+.more-details:hover{
+    color: aqua;
+}
+.contact .icon{
+    font-size : 4.5em;
+}
+.contact .info h3 {
+    color: black;
+}
+.footer{/*is tht cotainer because it contain P and div */
+    background-color:hotpink;
+    color: cornsilk;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+
+}
+.footer-title{
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.footer-title span{
+    color: mediumblue;
+}
+.footer .social-icons a{
+    font-size: 1.3em;
+    padding: 0 12px 0 0 ;  /* الترتيب زي اتجاه عقارب الساعه فوق يمين تحت شمال */ 
+}
+/* finally we want our website to be responsive and this mean that the website must be good at computer and mobile phone 
+so that we will use media query so that we will tell our website tha according to certain width 
+we want some classes تتصرف بشكل معين */
+@media (max-width:1023px){/* means from 0 to 1023*/
+    header{
+        padding: 12px 20px;
+    }
+    .navigation a{
+        padding-left: 10px;
+    }
+    .title{
+        font-size: 1.8em;
+    }
+    section{
+        padding: 80px 20px;
+    }
+    .main-content h2 {
+        font-size: 1em;
+    }
+    .main-content h3 {
+        font-size: 1.6em;
+    }
+    .content{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media(max-width:641px){
+    body{
+        font-size: 12px;
+        /* here 1em = 12px */ 
+    }
+    .main-content h2 {
+        font-size: 0.8em;
+    }
+    .main-content h3 {
+        font-size: 1.4em;
+    }
+}
+@media(max-width:300px){
+    body{
+        font-size: 10px;
+    }
+}
